@@ -32,13 +32,10 @@ jobs:
 
     - name: Build EXE (portable, onefile)
       run: |
-        pyinstaller ^
-          --onefile ^
-          --noconsole ^
-          --name ECU_Editor ^
-          main.py
+        pyinstaller --onefile --noconsole --name ECU_Editor main.py
 
     - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ECU_Editor_Win8_x86_
+        name: ECU_Editor_Win8_x86
+        path: dist/ECU_Editor.exe
